@@ -23,7 +23,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('profile/{slug}', 'ProfileController@index');
 	Route::get('/changePhoto', function() {
 	    return view('profile.pic');
-	});
+	})->name('profile');
 	Route::post('/uploadPhoto', 'ProfileController@uploadPhoto');
 });
 

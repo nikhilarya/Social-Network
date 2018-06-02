@@ -19,7 +19,7 @@
                         <a href="{{ url('/') }}/changePhoto">Change Image</a>
                         <hr>
 
-                        {!! Form::open(['url' => '/uploadPhoto', 'method' => 'post']) !!}
+                        {!! Form::open(['url' => '/uploadPhoto', 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
                             {!! Form::file('pic', ['class' => 'form-control']) !!}
                             <br>
                             {!! Form::submit('Upload Photo', ['class' => 'btn btn-success']) !!}
