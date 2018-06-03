@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -15,7 +15,7 @@
                     @endif
 
                     Welcome to your profile <br>
-                        <img src="{{ asset('img/') }}/{{ Auth::user()->pic }}" width="150px" height="150px"> <br> 
+                        <img src="{{ asset('img/') }}/{{ Auth::user()->pic }}" width="150px" height="150px" class="rounded-circle"> <br> 
                         <a href="{{ url('/') }}/changePhoto">Change Image</a>
                 </div>
             </div>

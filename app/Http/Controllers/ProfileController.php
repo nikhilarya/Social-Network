@@ -13,9 +13,10 @@ class ProfileController extends Controller
     	return view ('profile.index');
     }
 
-    public function changePhoto()
+    public function editProfile()
     {
-    	
+    	$data = Auth::user()->profile;
+    	return view('profile.editProfile', compact('data'));
     }
 
     public function uploadPhoto(Request $request)
@@ -31,5 +32,14 @@ class ProfileController extends Controller
             ->update(['pic' => $filename]);
 
         return back();
+    }
+
+    public function updateProfile(Request $request)
+    {
+    	//dd($request->all());
+    	$user_id = Auth::user()->id;
+    	DB::table('profiles')->where('user_id' , $user_id)->update($request->except('_token'));
+
+    	return back();
     }
 }

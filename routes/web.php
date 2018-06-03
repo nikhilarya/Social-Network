@@ -25,6 +25,9 @@ Route::middleware(['auth'])->group(function () {
 	    return view('profile.pic');
 	})->name('profile');
 	Route::post('/uploadPhoto', 'ProfileController@uploadPhoto');
+
+	Route::get('/editProfile', 'ProfileController@editProfile')->name('editProfile');
+	Route::post('/updateProfile', 'ProfileController@updateProfile');
 });
 
 
