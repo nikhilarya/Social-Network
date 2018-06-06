@@ -10,9 +10,7 @@
 	  </ol>
 	</nav>
     <div class="row justify-content-center">
-    	<div class="col-md-3">
-            Sidebar
-        </div>
+    	@include('profile.sidebar')
         <div class="col-md-9">
             <div class="card">
                 <div class="card-header">{{ Auth::user()->name }}</div>
@@ -27,7 +25,7 @@
 					      <div class="caption">
 					        
 					        <p>{{$data->city }}-{{ $data->country }}</p>
-					        <p><a href="#" class="btn btn-primary" role="button">Edit Profile</a> </p>
+					        <p><a href="{{url('/changePhoto')}}" class="btn btn-primary" role="button">Change Photo</a> </p>
 					      </div>
 					    </div>
 					  </div>

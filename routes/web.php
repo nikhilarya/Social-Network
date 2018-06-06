@@ -16,6 +16,7 @@ Route::get('/', function ()
 	return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
@@ -28,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('/editProfile', 'ProfileController@editProfile')->name('editProfile');
 	Route::post('/updateProfile', 'ProfileController@updateProfile');
+
+	Route::get('/findFriends', 'ProfileController@findFriends');
+	Route::get('/addFriend/{id}', 'ProfileController@sendRequest');
+
 });
 
 

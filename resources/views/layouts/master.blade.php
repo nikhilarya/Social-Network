@@ -35,7 +35,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @if (Auth::check())
-                            <li><a href="{{ url('/profile') }}/{{ Auth::user()->slug }}">Profile</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/profile') }}/{{ Auth::user()->slug }}">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/findFriends') }}">Find Friend</a>
+                            </li>
                         @endif
                     </ul>
 
